@@ -1,0 +1,12 @@
+sg-button {
+  $fontColor: #5d5d5c;
+  .default {
+    border-color: #cbcbcb;
+    color: $fontColor;
+  }
+  .checked {
+    border-color: green;
+    color: $fontColor;
+    border: 2px solid rgb(123, 247, 123);
+  }
+}

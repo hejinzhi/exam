@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>错题</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <div class="my-container" *ngFor="let q of wrongAnswers;let i =index ">
+    <div class="question">{{i+1}}、{{q.questionTitle}}</div>
+    <div class="wrong">
+      您的答案:
+      <div class="flex-container" *ngFor="let w of q.userAnswerDesc">
+        <div class="flex-25">{{w}}</div>
+      </div>
+    </div>
+    <div class="right">
+      正确答案:
+      <div class="flex-container" *ngFor="let r of q.rightAnswerDesc">
+        <div class="flex-25">{{r}}</div>
+      </div>
+    </div>
+  </div>
+</ion-content>

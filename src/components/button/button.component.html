@@ -1,0 +1,6 @@
+<div>
+  <!-- <button ion-button outline block class="default" >正确</button>
+  <button ion-button outline block class="checked">错误</button> -->
+  <button ion-button outline block color="light" [ngClass]="option.style" *ngFor="let option of buttonControl;let i =index "
+    (click)="toggleCheck(i)">{{option.title}}</button>
+</div>

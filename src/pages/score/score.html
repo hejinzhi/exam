@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>得分</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <div class="avatar">
+    <img [src]="examScore?.url" />
+  </div>
+  <div class="score">
+    <span>{{examScore?.score}}分</span>
+  </div>
+  <div class="remark">
+    <span>{{examScore?.remark}}</span>
+  </div>
+  <div class="review-btn">
+    <button ion-button block class="default" (click)="review()" *ngIf="examScore?.score <100">查看错题</button>
+  </div>
+</ion-content>

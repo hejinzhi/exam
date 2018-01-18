@@ -1,3 +1,30 @@
 page-home {
-
+  font-family: "楷体";
+  $fontColor: black;
+  .slide-zoom {
+    height: 100%;
+  }
+  .question {
+    width: 100%;
+    top: 10%;
+    margin-bottom: 10%;
+    span {
+      font-size: 20px;
+      font-weight: 800;
+    }
+  }
+  .default {
+    border-color: #cbcbcb;
+    color: $fontColor;
+  }
+  .checked {
+    border-color: green;
+    color: $fontColor;
+    border: 2px solid rgb(123, 247, 123);
+  }
+  .bottom-btn {
+    position: absolute;
+    bottom: 0;
+    width: 92%;
+  }
 }

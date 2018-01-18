@@ -1,0 +1,25 @@
+sg-wrong-question {
+  .my-container {
+    margin-bottom: 10px;
+    .question {
+      font-size: 16px;
+    }
+    .wrong {
+      color: red;
+      margin-top: 5px;
+      font-size: 14px;
+    }
+    .right {
+      color: green;
+      margin-top: 5px;
+      font-size: 14px;
+    }
+  }
+  .flex-container {
+    display: flex;
+    width: 100%;
+  }
+  .flex-25 {
+    flex: 1 0 auto;
+  }
+}
