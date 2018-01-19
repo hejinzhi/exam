@@ -2,9 +2,10 @@ import { ScorePage } from './../score/score';
 import { CommonService } from './../../service/common.service';
 import { ExamService } from './../../service/exam.service';
 import { Component, OnInit } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
+
 
 @Component({
   selector: 'page-home',
@@ -31,29 +32,44 @@ export class HomePage implements OnInit {
   constructor(
     public navCtrl: NavController,
     private service: ExamService,
-    private commonService: CommonService
+    private commonService: CommonService,
+    private navParams: NavParams
   ) {
 
   }
 
   ngOnInit() {
+    let examId = this.getInitExamId();
     this.slides.lockSwipes(true);
-    this.service.getExamById(1)
+    this.service.getExamById(examId)
       .map((r) => r.json().result)
       .subscribe(res => {
         this.exam = res;
       });
 
-    this.service.getQuestionsByExamId(1)
+    this.service.getQuestionsByExamId(examId)
       .map((r) => r.json().result)
       .subscribe((res) => {
         this.allQuestions = res;
         this.allQuestionsAfterFormat = this.formatData(this.allQuestions);
       });
+  }
 
+  getInitExamId() {
+    let result = 0;
+    if (document.URL.indexOf("?") > 0) {
+      let splitURL = document.URL.split("?");
+      let splitParams = splitURL[1].split("&");
+      let i: any;
+      for (i in splitParams) {
+        let singleURLParam = splitParams[i].split('=');
 
-
-
+        if (singleURLParam[0] == "examId") {
+          result = parseInt(singleURLParam[1]);
+        }
+      }
+    }
+    return result;
   }
 
 
