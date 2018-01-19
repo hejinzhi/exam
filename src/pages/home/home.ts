@@ -2,7 +2,7 @@ import { ScorePage } from './../score/score';
 import { CommonService } from './../../service/common.service';
 import { ExamService } from './../../service/exam.service';
 import { Component, OnInit } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
 
@@ -33,7 +33,6 @@ export class HomePage implements OnInit {
     public navCtrl: NavController,
     private service: ExamService,
     private commonService: CommonService,
-    private navParams: NavParams
   ) {
 
   }
